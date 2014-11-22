@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Repository` struct in crate `git2`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Repository">
+
+    <title>git2::Repository - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <section class="sidebar">
+        
+        <p class='location'><a href='index.html'>git2</a></p><div class='block mod'><h2>Modules</h2><a class='mod ' href='build/index.html'>build</a></div><div class='block struct'><h2>Structs</h2><a class='struct ' href='struct.Blob.html'>Blob</a><a class='struct ' href='struct.Branch.html'>Branch</a><a class='struct ' href='struct.Branches.html'>Branches</a><a class='struct ' href='struct.Buf.html'>Buf</a><a class='struct ' href='struct.Commit.html'>Commit</a><a class='struct ' href='struct.Config.html'>Config</a><a class='struct ' href='struct.ConfigEntries.html'>ConfigEntries</a><a class='struct ' href='struct.ConfigEntry.html'>ConfigEntry</a><a class='struct ' href='struct.Cred.html'>Cred</a><a class='struct ' href='struct.CredentialHelper.html'>CredentialHelper</a><a class='struct ' href='struct.CredentialType.html'>CredentialType</a><a class='struct ' href='struct.Error.html'>Error</a><a class='struct ' href='struct.Index.html'>Index</a><a class='struct ' href='struct.IndexAddOption.html'>IndexAddOption</a><a class='struct ' href='struct.IndexEntries.html'>IndexEntries</a><a class='struct ' href='struct.IndexEntry.html'>IndexEntry</a><a class='struct ' href='struct.Object.html'>Object</a><a class='struct ' href='struct.Oid.html'>Oid</a><a class='struct ' href='struct.Parents.html'>Parents</a><a class='struct ' href='struct.Progress.html'>Progress</a><a class='struct ' href='struct.Push.html'>Push</a><a class='struct ' href='struct.Reference.html'>Reference</a><a class='struct ' href='struct.ReferenceNames.html'>ReferenceNames</a><a class='struct ' href='struct.References.html'>References</a><a class='struct ' href='struct.Refspec.html'>Refspec</a><a class='struct ' href='struct.Refspecs.html'>Refspecs</a><a class='struct ' href='struct.Remote.html'>Remote</a><a class='struct ' href='struct.RemoteCallbacks.html'>RemoteCallbacks</a><a class='struct current' href='struct.Repository.html'>Repository</a><a class='struct ' href='struct.RepositoryInitOptions.html'>RepositoryInitOptions</a><a class='struct ' href='struct.Revspec.html'>Revspec</a><a class='struct ' href='struct.Signature.html'>Signature</a><a class='struct ' href='struct.Status.html'>Status</a><a class='struct ' href='struct.StringArray.html'>StringArray</a><a class='struct ' href='struct.StringArrayBytes.html'>StringArrayBytes</a><a class='struct ' href='struct.StringArrayItems.html'>StringArrayItems</a><a class='struct ' href='struct.Submodule.html'>Submodule</a><a class='struct ' href='struct.Tag.html'>Tag</a><a class='struct ' href='struct.Tree.html'>Tree</a><a class='struct ' href='struct.TreeEntry.html'>TreeEntry</a></div><div class='block enum'><h2>Enums</h2><a class='enum ' href='enum.BranchType.html'>BranchType</a><a class='enum ' href='enum.ConfigLevel.html'>ConfigLevel</a><a class='enum ' href='enum.Direction.html'>Direction</a><a class='enum ' href='enum.ErrorCode.html'>ErrorCode</a><a class='enum ' href='enum.ObjectType.html'>ObjectType</a><a class='enum ' href='enum.RepositoryState.html'>RepositoryState</a><a class='enum ' href='enum.ResetType.html'>ResetType</a></div>
+    </section>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press 'S' to search, '?' for more options..."
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>git2</a>::<wbr><a class='struct' href=''>Repository</a><wbr></span><span class='out-of-band'><span id='render-detail'>
+            <a id="collapse-all" href="#">[-]
+            </a>&nbsp;<a id="expand-all" href="#">[+]</a>
+        </span><a id='src-20486' href='../src/git2/home/travis/build/alexcrichton/git2-rs/src/repo.rs.html#22-25'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Repository {
+    // some fields omitted
+}</pre><div class='docblock'><p>An owned git repository, representing all state associated with the
+underlying filesystem.</p>
+
+<p>This structure corresponds to a <code>git_repository</code> in libgit2. Many other
+types in git2-rs are derivative from this structure and are attached to its
+lifetime.</p>
+
+<p>When a repository goes out of scope it is freed in memory but not deleted
+from the filesystem.</p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><a class='stability Unmarked' title='No stability level'></a><code>impl <a class='struct' href='../git2/struct.Repository.html' title='git2::Repository'>Repository</a></code></h3><div class='impl-methods'><h4 id='method.open' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.open' class='fnname'>open</a>(path: &amp;<a class='struct' href='http://doc.rust-lang.org/nightly/std/path/posix/struct.Path.html' title='std::path::posix::Path'>Path</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../git2/struct.Repository.html' title='git2::Repository'>Repository</a>, <a class='struct' href='../git2/struct.Error.html' title='git2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Attempt to open an already-existing repository at <code>path</code>.</p>
+
+<p>The path can point to either a normal or bare repository.</p>
+</div><h4 id='method.discover' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.discover' class='fnname'>discover</a>(path: &amp;<a class='struct' href='http://doc.rust-lang.org/nightly/std/path/posix/struct.Path.html' title='std::path::posix::Path'>Path</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../git2/struct.Repository.html' title='git2::Repository'>Repository</a>, <a class='struct' href='../git2/struct.Error.html' title='git2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Attempt to open an already-existing repository at or above <code>path</code></p>
+
+<p>This starts at <code>path</code> and looks up the filesystem hierarchy
+until it finds a repository.</p>
+</div><h4 id='method.init' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.init' class='fnname'>init</a>(path: &amp;<a class='struct' href='http://doc.rust-lang.org/nightly/std/path/posix/struct.Path.html' title='std::path::posix::Path'>Path</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../git2/struct.Repository.html' title='git2::Repository'>Repository</a>, <a class='struct' href='../git2/struct.Error.html' title='git2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Creates a new repository in the specified folder.</p>
+
+<p>This by default will create any necessary directories to create the
+repository, and it will read any user-specified templates when creating
+the repository. This behavior can be configured through <code>init_opts</code>.</p>
+</div><h4 id='method.init_bare' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.init_bare' class='fnname'>init_bare</a>(path: &amp;<a class='struct' href='http://doc.rust-lang.org/nightly/std/path/posix/struct.Path.html' title='std::path::posix::Path'>Path</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../git2/struct.Repository.html' title='git2::Repository'>Repository</a>, <a class='struct' href='../git2/struct.Error.html' title='git2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Creates a new <code>--bare</code> repository in the specified folder.</p>
+
+<p>The folder must exist prior to invoking this function.</p>
+</div><h4 id='method.init_opts' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.init_opts' class='fnname'>init_opts</a>(path: &amp;<a class='struct' href='http://doc.rust-lang.org/nightly/std/path/posix/struct.Path.html' title='std::path::posix::Path'>Path</a>, opts: &amp;<a class='struct' href='../git2/struct.RepositoryInitOptions.html' title='git2::RepositoryInitOptions'>RepositoryInitOptions</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../git2/struct.Repository.html' title='git2::Repository'>Repository</a>, <a class='struct' href='../git2/struct.Error.html' title='git2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Creates a new <code>--bare</code> repository in the specified folder.</p>
+
+<p>The folder must exist prior to invoking this function.</p>
+</div><h4 id='method.clone' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.clone' class='fnname'>clone</a>(url: &amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>, into: &amp;<a class='struct' href='http://doc.rust-lang.org/nightly/std/path/posix/struct.Path.html' title='std::path::posix::Path'>Path</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../git2/struct.Repository.html' title='git2::Repository'>Repository</a>, <a class='struct' href='../git2/struct.Error.html' title='git2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Clone a remote repository.</p>
+
+<p>See the <code>RepoBuilder</code> struct for more information. This function will
+delegate to a fresh <code>RepoBuilder</code></p>
+</div><h4 id='method.from_raw' class='method'><a class='stability Unmarked' title='No stability level'></a><code>unsafe fn <a href='#method.from_raw' class='fnname'>from_raw</a>(ptr: *mut <a class='enum' href='../libgit2-sys/enum.git_repository.html' title='libgit2-sys::git_repository'>git_repository</a>) -&gt; <a class='struct' href='../git2/struct.Repository.html' title='git2::Repository'>Repository</a></code></h4>
+<div class='docblock'><p>Create a repository from the raw underlying pointer.</p>
+
+<p>This function will take ownership of the pointer specified.</p>
+</div><h4 id='method.revparse' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.revparse' class='fnname'>revparse</a>(&amp;self, spec: &amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../git2/struct.Revspec.html' title='git2::Revspec'>Revspec</a>, <a class='struct' href='../git2/struct.Error.html' title='git2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Execute a rev-parse operation against the <code>spec</code> listed.</p>
+
+<p>The resulting revision specification is returned, or an error is
+returned if one occurs.</p>
+</div><h4 id='method.revparse_single' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.revparse_single' class='fnname'>revparse_single</a>(&amp;self, spec: &amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../git2/struct.Object.html' title='git2::Object'>Object</a>, <a class='struct' href='../git2/struct.Error.html' title='git2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Find a single object, as specified by a revision string.</p>
+</div><h4 id='method.is_bare' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.is_bare' class='fnname'>is_bare</a>(&amp;self) -&gt; <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>Tests whether this repository is a bare repository or not.</p>
+</div><h4 id='method.is_shallow' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.is_shallow' class='fnname'>is_shallow</a>(&amp;self) -&gt; <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>Tests whether this repository is a shallow clone.</p>
+</div><h4 id='method.is_empty' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.is_empty' class='fnname'>is_empty</a>(&amp;self) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>, <a class='struct' href='../git2/struct.Error.html' title='git2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Tests whether this repository is empty.</p>
+</div><h4 id='method.path' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.path' class='fnname'>path</a>(&amp;self) -&gt; <a class='struct' href='http://doc.rust-lang.org/nightly/std/path/posix/struct.Path.html' title='std::path::posix::Path'>Path</a></code></h4>
+<div class='docblock'><p>Returns the path to the <code>.git</code> folder for normal repositories or the
+repository itself for bare repositories.</p>
+</div><h4 id='method.state' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.state' class='fnname'>state</a>(&amp;self) -&gt; <a class='enum' href='../git2/enum.RepositoryState.html' title='git2::RepositoryState'>RepositoryState</a></code></h4>
+<div class='docblock'><p>Returns the current state of this repository</p>
+</div><h4 id='method.workdir' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.workdir' class='fnname'>workdir</a>(&amp;self) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='http://doc.rust-lang.org/nightly/std/path/posix/struct.Path.html' title='std::path::posix::Path'>Path</a>&gt;</code></h4>
+<div class='docblock'><p>Get the path of the working directory for this repository.</p>
+
+<p>If this repository is bare, then <code>None</code> is returned.</p>
+</div><h4 id='method.namespace' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.namespace' class='fnname'>namespace</a>(&amp;self) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;&amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>&gt;</code></h4>
+<div class='docblock'><p>Get the currently active namespace for this repository.</p>
+
+<p>If there is no namespace, or the namespace is not a valid utf8 string,
+<code>None</code> is returned.</p>
+</div><h4 id='method.namespace_bytes' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.namespace_bytes' class='fnname'>namespace_bytes</a>(&amp;self) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a href='http://doc.rust-lang.org/nightly/std/primitive.slice.html'>&amp;[</a><a href='http://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a><a href='http://doc.rust-lang.org/nightly/std/primitive.slice.html'>]</a>&gt;</code></h4>
+<div class='docblock'><p>Get the currently active namespace for this repository as a byte array.</p>
+
+<p>If there is no namespace, <code>None</code> is returned.</p>
+</div><h4 id='method.remotes' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.remotes' class='fnname'>remotes</a>(&amp;self) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../git2/struct.StringArray.html' title='git2::StringArray'>StringArray</a>, <a class='struct' href='../git2/struct.Error.html' title='git2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>List all remotes for a given repository</p>
+</div><h4 id='method.find_remote' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.find_remote' class='fnname'>find_remote</a>(&amp;self, name: &amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../git2/struct.Remote.html' title='git2::Remote'>Remote</a>, <a class='struct' href='../git2/struct.Error.html' title='git2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Get the information for a particular remote</p>
+</div><h4 id='method.remote' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.remote' class='fnname'>remote</a>(&amp;self, name: &amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>, url: &amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../git2/struct.Remote.html' title='git2::Remote'>Remote</a>, <a class='struct' href='../git2/struct.Error.html' title='git2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Add a remote with the default fetch refspec to the repository&#39;s
+configuration.</p>
+</div><h4 id='method.remote_anonymous' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.remote_anonymous' class='fnname'>remote_anonymous</a>(&amp;self, url: &amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>, fetch: &amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../git2/struct.Remote.html' title='git2::Remote'>Remote</a>, <a class='struct' href='../git2/struct.Error.html' title='git2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Create an anonymous remote</p>
+
+<p>Create a remote with the given url and refspec in memory. You can use
+this when you have a URL instead of a remote&#39;s name. Note that anonymous
+remotes cannot be converted to persisted remotes.</p>
+</div><h4 id='method.raw' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.raw' class='fnname'>raw</a>(&amp;self) -&gt; *mut <a class='enum' href='../libgit2-sys/enum.git_repository.html' title='libgit2-sys::git_repository'>git_repository</a></code></h4>
+<div class='docblock'><p>Get the underlying raw repository</p>
+</div><h4 id='method.reset' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.reset' class='fnname'>reset</a>&lt;'a&gt;(&amp;'a self, target: &amp;<a class='struct' href='../git2/struct.Object.html' title='git2::Object'>Object</a>&lt;'a&gt;, kind: <a class='enum' href='../git2/enum.ResetType.html' title='git2::ResetType'>ResetType</a>, sig: <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;&amp;<a class='struct' href='../git2/struct.Signature.html' title='git2::Signature'>Signature</a>&gt;, msg: <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;&amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>&gt;) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a href='http://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='struct' href='../git2/struct.Error.html' title='git2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Sets the current head to the specified object and optionally resets
+the index and working tree to match.</p>
+
+<p>A soft reset means the head will be moved to the commit.</p>
+
+<p>A mixed reset will trigger a soft reset, plus the index will be
+replaced with the content of the commit tree.</p>
+
+<p>A hard reset will trigger a mixed reset and the working directory will
+be replaced with the content of the index. (Untracked and ignored files
+will be left alone, however.)</p>
+</div><h4 id='method.reset_default' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.reset_default' class='fnname'>reset_default</a>&lt;'a, T: <a class='trait' href='http://doc.rust-lang.org/nightly/rustrt/c_str/trait.ToCStr.html' title='rustrt::c_str::ToCStr'>ToCStr</a>, I: <a class='trait' href='http://doc.rust-lang.org/nightly/core/iter/trait.Iterator.html' title='core::iter::Iterator'>Iterator</a>&lt;T&gt;&gt;(&amp;'a self, target: <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;&amp;<a class='struct' href='../git2/struct.Object.html' title='git2::Object'>Object</a>&lt;'a&gt;&gt;, paths: I) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a href='http://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='struct' href='../git2/struct.Error.html' title='git2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Updates some entries in the index from the target commit tree.</p>
+
+<p>The scope of the updated entries is determined by the paths being
+in the iterator provided.</p>
+
+<p>Passing a <code>None</code> target will result in removing entries in the index
+matching the provided pathspecs.</p>
+</div><h4 id='method.head' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.head' class='fnname'>head</a>(&amp;self) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../git2/struct.Reference.html' title='git2::Reference'>Reference</a>, <a class='struct' href='../git2/struct.Error.html' title='git2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Retrieve and resolve the reference pointed at by HEAD.</p>
+</div><h4 id='method.references' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.references' class='fnname'>references</a>(&amp;self) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../git2/struct.References.html' title='git2::References'>References</a>, <a class='struct' href='../git2/struct.Error.html' title='git2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Create an iterator for the repo&#39;s references</p>
+</div><h4 id='method.references_glob' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.references_glob' class='fnname'>references_glob</a>(&amp;self, glob: &amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../git2/struct.References.html' title='git2::References'>References</a>, <a class='struct' href='../git2/struct.Error.html' title='git2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Create an iterator for the repo&#39;s references that match the specified
+glob</p>
+</div><h4 id='method.submodules' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.submodules' class='fnname'>submodules</a>(&amp;self) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='http://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='struct' href='../git2/struct.Submodule.html' title='git2::Submodule'>Submodule</a>&gt;, <a class='struct' href='../git2/struct.Error.html' title='git2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Load all submodules for this repository and return them.</p>
+</div><h4 id='method.branches' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.branches' class='fnname'>branches</a>(&amp;self, filter: <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='enum' href='../git2/enum.BranchType.html' title='git2::BranchType'>BranchType</a>&gt;) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../git2/struct.Branches.html' title='git2::Branches'>Branches</a>, <a class='struct' href='../git2/struct.Error.html' title='git2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Create an iterator which loops over the requested branches.</p>
+</div><h4 id='method.index' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.index' class='fnname'>index</a>(&amp;self) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../git2/struct.Index.html' title='git2::Index'>Index</a>, <a class='struct' href='../git2/struct.Error.html' title='git2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Get the Index file for this repository.</p>
+
+<p>If a custom index has not been set, the default index for the repository
+will be returned (the one located in .git/index).</p>
+</div><h4 id='method.config' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.config' class='fnname'>config</a>(&amp;self) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../git2/struct.Config.html' title='git2::Config'>Config</a>, <a class='struct' href='../git2/struct.Error.html' title='git2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Get the configuration file for this repository.</p>
+
+<p>If a configuration file has not been set, the default config set for the
+repository will be returned, including global and system configurations
+(if they are available).</p>
+</div><h4 id='method.blob' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.blob' class='fnname'>blob</a>(&amp;self, data: <a href='http://doc.rust-lang.org/nightly/std/primitive.slice.html'>&amp;[</a><a href='http://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a><a href='http://doc.rust-lang.org/nightly/std/primitive.slice.html'>]</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../git2/struct.Oid.html' title='git2::Oid'>Oid</a>, <a class='struct' href='../git2/struct.Error.html' title='git2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Write an in-memory buffer to the ODB as a blob.</p>
+
+<p>The Oid returned can in turn be passed to <code>find_blob</code> to get a handle to
+the blob.</p>
+</div><h4 id='method.blob_path' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.blob_path' class='fnname'>blob_path</a>(&amp;self, path: &amp;<a class='struct' href='http://doc.rust-lang.org/nightly/std/path/posix/struct.Path.html' title='std::path::posix::Path'>Path</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../git2/struct.Oid.html' title='git2::Oid'>Oid</a>, <a class='struct' href='../git2/struct.Error.html' title='git2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Read a file from the filesystem and write its content to the Object
+Database as a loose blob</p>
+
+<p>The Oid returned can in turn be passed to <code>find_blob</code> to get a handle to
+the blob.</p>
+</div><h4 id='method.find_blob' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.find_blob' class='fnname'>find_blob</a>(&amp;self, oid: <a class='struct' href='../git2/struct.Oid.html' title='git2::Oid'>Oid</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../git2/struct.Blob.html' title='git2::Blob'>Blob</a>, <a class='struct' href='../git2/struct.Error.html' title='git2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Lookup a reference to one of the objects in a repository.</p>
+</div><h4 id='method.branch' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.branch' class='fnname'>branch</a>&lt;'a&gt;(&amp;'a self, branch_name: &amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>, target: &amp;<a class='struct' href='../git2/struct.Commit.html' title='git2::Commit'>Commit</a>&lt;'a&gt;, force: <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>, signature: <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;&amp;<a class='struct' href='../git2/struct.Signature.html' title='git2::Signature'>Signature</a>&gt;, log_message: <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;&amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>&gt;) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../git2/struct.Branch.html' title='git2::Branch'>Branch</a>&lt;'a&gt;, <a class='struct' href='../git2/struct.Error.html' title='git2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Create a new branch pointing at a target commit</p>
+
+<p>A new direct reference will be created pointing to this target commit.
+If <code>force</code> is true and a reference already exists with the given name,
+it&#39;ll be replaced.</p>
+</div><h4 id='method.find_branch' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.find_branch' class='fnname'>find_branch</a>(&amp;self, name: &amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>, branch_type: <a class='enum' href='../git2/enum.BranchType.html' title='git2::BranchType'>BranchType</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../git2/struct.Branch.html' title='git2::Branch'>Branch</a>, <a class='struct' href='../git2/struct.Error.html' title='git2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Lookup a branch by its name in a repository.</p>
+</div><h4 id='method.commit' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.commit' class='fnname'>commit</a>&lt;'a&gt;(&amp;'a self, update_ref: <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;&amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>&gt;, author: &amp;<a class='struct' href='../git2/struct.Signature.html' title='git2::Signature'>Signature</a>, committer: &amp;<a class='struct' href='../git2/struct.Signature.html' title='git2::Signature'>Signature</a>, message: &amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>, tree: &amp;<a class='struct' href='../git2/struct.Tree.html' title='git2::Tree'>Tree</a>&lt;'a&gt;, parents: <a href='http://doc.rust-lang.org/nightly/std/primitive.slice.html'>&amp;[</a>&amp;<a class='struct' href='../git2/struct.Commit.html' title='git2::Commit'>Commit</a>&lt;'a&gt;<a href='http://doc.rust-lang.org/nightly/std/primitive.slice.html'>]</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../git2/struct.Oid.html' title='git2::Oid'>Oid</a>, <a class='struct' href='../git2/struct.Error.html' title='git2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Create new commit in the repository</p>
+
+<p>If the <code>update_ref</code> is not <code>None</code>, name of the reference that will be
+updated to point to this commit. If the reference is not direct, it will
+be resolved to a direct reference. Use &quot;HEAD&quot; to update the HEAD of the
+current branch and make it point to this commit. If the reference
+doesn&#39;t exist yet, it will be created. If it does exist, the first
+parent must be the tip of this branch.</p>
+</div><h4 id='method.find_commit' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.find_commit' class='fnname'>find_commit</a>(&amp;self, oid: <a class='struct' href='../git2/struct.Oid.html' title='git2::Oid'>Oid</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../git2/struct.Commit.html' title='git2::Commit'>Commit</a>, <a class='struct' href='../git2/struct.Error.html' title='git2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Lookup a reference to one of the commits in a repository.</p>
+</div><h4 id='method.find_object' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.find_object' class='fnname'>find_object</a>(&amp;self, oid: <a class='struct' href='../git2/struct.Oid.html' title='git2::Oid'>Oid</a>, kind: <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='enum' href='../git2/enum.ObjectType.html' title='git2::ObjectType'>ObjectType</a>&gt;) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../git2/struct.Object.html' title='git2::Object'>Object</a>, <a class='struct' href='../git2/struct.Error.html' title='git2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Lookup a reference to one of the objects in a repository.</p>
+</div><h4 id='method.reference' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.reference' class='fnname'>reference</a>(&amp;self, name: &amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>, id: <a class='struct' href='../git2/struct.Oid.html' title='git2::Oid'>Oid</a>, force: <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>, sig: <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;&amp;<a class='struct' href='../git2/struct.Signature.html' title='git2::Signature'>Signature</a>&gt;, log_message: &amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../git2/struct.Reference.html' title='git2::Reference'>Reference</a>, <a class='struct' href='../git2/struct.Error.html' title='git2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Create a new direct reference.</p>
+
+<p>This function will return an error if a reference already exists with
+the given name unless force is true, in which case it will be
+overwritten.</p>
+</div><h4 id='method.reference_symbolic' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.reference_symbolic' class='fnname'>reference_symbolic</a>(&amp;self, name: &amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>, target: &amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>, force: <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>, sig: <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;&amp;<a class='struct' href='../git2/struct.Signature.html' title='git2::Signature'>Signature</a>&gt;, log_message: &amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../git2/struct.Reference.html' title='git2::Reference'>Reference</a>, <a class='struct' href='../git2/struct.Error.html' title='git2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Create a new symbolic reference.</p>
+
+<p>This function will return an error if a reference already exists with
+the given name unless force is true, in which case it will be
+overwritten.</p>
+</div><h4 id='method.find_reference' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.find_reference' class='fnname'>find_reference</a>(&amp;self, name: &amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../git2/struct.Reference.html' title='git2::Reference'>Reference</a>, <a class='struct' href='../git2/struct.Error.html' title='git2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Lookup a reference to one of the objects in a repository.</p>
+</div><h4 id='method.refname_to_id' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.refname_to_id' class='fnname'>refname_to_id</a>(&amp;self, name: &amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../git2/struct.Oid.html' title='git2::Oid'>Oid</a>, <a class='struct' href='../git2/struct.Error.html' title='git2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Lookup a reference by name and resolve immediately to OID.</p>
+
+<p>This function provides a quick way to resolve a reference name straight
+through to the object id that it refers to. This avoids having to
+allocate or free any <code>Reference</code> objects for simple situations.</p>
+</div><h4 id='method.signature' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.signature' class='fnname'>signature</a>(&amp;self) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../git2/struct.Signature.html' title='git2::Signature'>Signature</a>&lt;'static&gt;, <a class='struct' href='../git2/struct.Error.html' title='git2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Create a new action signature with default user and now timestamp.</p>
+
+<p>This looks up the user.name and user.email from the configuration and
+uses the current time as the timestamp, and creates a new signature
+based on that information. It will return <code>NotFound</code> if either the
+user.name or user.email are not set.</p>
+</div><h4 id='method.submodule' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.submodule' class='fnname'>submodule</a>(&amp;self, url: &amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>, path: &amp;<a class='struct' href='http://doc.rust-lang.org/nightly/std/path/posix/struct.Path.html' title='std::path::posix::Path'>Path</a>, use_gitlink: <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../git2/struct.Submodule.html' title='git2::Submodule'>Submodule</a>, <a class='struct' href='../git2/struct.Error.html' title='git2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Set up a new git submodule for checkout.</p>
+
+<p>This does &quot;git submodule add&quot; up to the fetch and checkout of the
+submodule contents. It preps a new submodule, creates an entry in
+<code>.gitmodules</code> and creates an empty initialized repository either at the
+given path in the working directory or in <code>.git/modules</code> with a gitlink
+from the working directory to the new repo.</p>
+
+<p>To fully emulate &quot;git submodule add&quot; call this function, then <code>open()</code>
+the submodule repo and perform the clone step as needed. Lastly, call
+<code>finalize()</code> to wrap up adding the new submodule and <code>.gitmodules</code> to
+the index to be ready to commit.</p>
+</div><h4 id='method.find_submodule' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.find_submodule' class='fnname'>find_submodule</a>(&amp;self, name: &amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../git2/struct.Submodule.html' title='git2::Submodule'>Submodule</a>, <a class='struct' href='../git2/struct.Error.html' title='git2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Lookup submodule information by name or path.</p>
+
+<p>Given either the submodule name or path (they are usually the same),
+this returns a structure describing the submodule.</p>
+</div><h4 id='method.find_tree' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.find_tree' class='fnname'>find_tree</a>(&amp;self, oid: <a class='struct' href='../git2/struct.Oid.html' title='git2::Oid'>Oid</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../git2/struct.Tree.html' title='git2::Tree'>Tree</a>, <a class='struct' href='../git2/struct.Error.html' title='git2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Lookup a reference to one of the objects in a repository.</p>
+</div><h4 id='method.tag' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.tag' class='fnname'>tag</a>&lt;'a&gt;(&amp;'a self, name: &amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>, target: &amp;<a class='struct' href='../git2/struct.Object.html' title='git2::Object'>Object</a>&lt;'a&gt;, tagger: &amp;<a class='struct' href='../git2/struct.Signature.html' title='git2::Signature'>Signature</a>, message: &amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>, force: <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../git2/struct.Oid.html' title='git2::Oid'>Oid</a>, <a class='struct' href='../git2/struct.Error.html' title='git2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Create a new tag in the repository from an object</p>
+
+<p>A new reference will also be created pointing to this tag object. If
+<code>force</code> is true and a reference already exists with the given name, it&#39;ll
+be replaced.</p>
+
+<p>The message will not be cleaned up.</p>
+
+<p>The tag name will be checked for validity. You must avoid the characters
+&#39;~&#39;, &#39;<sup>&#39;,</sup> &#39;:&#39;, &#39; \ &#39;, &#39;?&#39;, &#39;[&#39;, and &#39;*&#39;, and the sequences &quot;..&quot; and &quot; @
+{&quot; which have special meaning to revparse.</p>
+</div><h4 id='method.find_tag' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.find_tag' class='fnname'>find_tag</a>(&amp;self, id: <a class='struct' href='../git2/struct.Oid.html' title='git2::Oid'>Oid</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../git2/struct.Tag.html' title='git2::Tag'>Tag</a>, <a class='struct' href='../git2/struct.Error.html' title='git2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Lookup a tag object from the repository.</p>
+</div><h4 id='method.tag_delete' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.tag_delete' class='fnname'>tag_delete</a>(&amp;self, name: &amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a href='http://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='struct' href='../git2/struct.Error.html' title='git2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Delete an existing tag reference.</p>
+
+<p>The tag name will be checked for validity, see <code>tag</code> for some rules
+about valid names.</p>
+</div><h4 id='method.tag_names' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.tag_names' class='fnname'>tag_names</a>(&amp;self, pattern: <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;&amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>&gt;) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../git2/struct.StringArray.html' title='git2::StringArray'>StringArray</a>, <a class='struct' href='../git2/struct.Error.html' title='git2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Get a list with all the tags in the repository.</p>
+
+<p>An optional fnmatch pattern can also be specified.</p>
+</div><h4 id='method.checkout_head' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.checkout_head' class='fnname'>checkout_head</a>(&amp;self, opts: <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;&amp;<a class='struct' href='../git2/build/struct.CheckoutBuilder.html' title='git2::build::CheckoutBuilder'>CheckoutBuilder</a>&gt;) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a href='http://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='struct' href='../git2/struct.Error.html' title='git2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Updates files in the index and the working tree to match the content of
+the commit pointed at by HEAD.</p>
+</div><h4 id='method.checkout_index' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.checkout_index' class='fnname'>checkout_index</a>(&amp;self, index: <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;&amp;mut <a class='struct' href='../git2/struct.Index.html' title='git2::Index'>Index</a>&gt;, opts: <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;&amp;<a class='struct' href='../git2/build/struct.CheckoutBuilder.html' title='git2::build::CheckoutBuilder'>CheckoutBuilder</a>&gt;) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a href='http://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='struct' href='../git2/struct.Error.html' title='git2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Updates files in the working tree to match the content of the index.</p>
+
+<p>If the index is <code>None</code>, the repository&#39;s index will be used.</p>
+</div><h4 id='method.checkout_tree' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.checkout_tree' class='fnname'>checkout_tree</a>(&amp;self, treeish: &amp;<a class='struct' href='../git2/struct.Object.html' title='git2::Object'>Object</a>, opts: <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;&amp;<a class='struct' href='../git2/build/struct.CheckoutBuilder.html' title='git2::build::CheckoutBuilder'>CheckoutBuilder</a>&gt;) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a href='http://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='struct' href='../git2/struct.Error.html' title='git2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Updates files in the index and working tree to match the content of the
+tree pointed at by the treeish.</p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><a class='stability Unmarked' title='No stability level'></a><code>impl <a class='trait' href='http://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../git2/struct.Repository.html' title='git2::Repository'>Repository</a></code></h3><div class='impl-methods'><h4 id='method.drop' class='method'><a class='stability Experimental' title='Experimental'></a><code>fn <a href='#method.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <div id="help" class="hidden">
+        <div class="shortcuts">
+            <h1>Keyboard shortcuts</h1>
+            <dl>
+                <dt>?</dt>
+                <dd>Show this help dialog</dd>
+                <dt>S</dt>
+                <dd>Focus the search field</dd>
+                <dt>&larrb;</dt>
+                <dd>Move up in search results</dd>
+                <dt>&rarrb;</dt>
+                <dd>Move down in search results</dd>
+                <dt>&#9166;</dt>
+                <dd>Go to active search result</dd>
+            </dl>
+        </div>
+        <div class="infos">
+            <h1>Search tricks</h1>
+            <p>
+                Prefix searches with a type followed by a colon (e.g.
+                <code>fn:</code>) to restrict the search to a given type.
+            </p>
+            <p>
+                Accepted types are: <code>fn</code>, <code>mod</code>,
+                <code>struct</code>, <code>enum</code>,
+                <code>trait</code>, <code>typedef</code> (or
+                <code>tdef</code>).
+            </p>
+        </div>
+    </div>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "git2";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    
+    <script async src="../search-index.js"></script>
+</body>
+</html>

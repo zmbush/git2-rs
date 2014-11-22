@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Reference` struct in crate `git2`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Reference">
+
+    <title>git2::Reference - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <section class="sidebar">
+        
+        <p class='location'><a href='index.html'>git2</a></p><div class='block mod'><h2>Modules</h2><a class='mod ' href='build/index.html'>build</a></div><div class='block struct'><h2>Structs</h2><a class='struct ' href='struct.Blob.html'>Blob</a><a class='struct ' href='struct.Branch.html'>Branch</a><a class='struct ' href='struct.Branches.html'>Branches</a><a class='struct ' href='struct.Buf.html'>Buf</a><a class='struct ' href='struct.Commit.html'>Commit</a><a class='struct ' href='struct.Config.html'>Config</a><a class='struct ' href='struct.ConfigEntries.html'>ConfigEntries</a><a class='struct ' href='struct.ConfigEntry.html'>ConfigEntry</a><a class='struct ' href='struct.Cred.html'>Cred</a><a class='struct ' href='struct.CredentialHelper.html'>CredentialHelper</a><a class='struct ' href='struct.CredentialType.html'>CredentialType</a><a class='struct ' href='struct.Error.html'>Error</a><a class='struct ' href='struct.Index.html'>Index</a><a class='struct ' href='struct.IndexAddOption.html'>IndexAddOption</a><a class='struct ' href='struct.IndexEntries.html'>IndexEntries</a><a class='struct ' href='struct.IndexEntry.html'>IndexEntry</a><a class='struct ' href='struct.Object.html'>Object</a><a class='struct ' href='struct.Oid.html'>Oid</a><a class='struct ' href='struct.Parents.html'>Parents</a><a class='struct ' href='struct.Progress.html'>Progress</a><a class='struct ' href='struct.Push.html'>Push</a><a class='struct current' href='struct.Reference.html'>Reference</a><a class='struct ' href='struct.ReferenceNames.html'>ReferenceNames</a><a class='struct ' href='struct.References.html'>References</a><a class='struct ' href='struct.Refspec.html'>Refspec</a><a class='struct ' href='struct.Refspecs.html'>Refspecs</a><a class='struct ' href='struct.Remote.html'>Remote</a><a class='struct ' href='struct.RemoteCallbacks.html'>RemoteCallbacks</a><a class='struct ' href='struct.Repository.html'>Repository</a><a class='struct ' href='struct.RepositoryInitOptions.html'>RepositoryInitOptions</a><a class='struct ' href='struct.Revspec.html'>Revspec</a><a class='struct ' href='struct.Signature.html'>Signature</a><a class='struct ' href='struct.Status.html'>Status</a><a class='struct ' href='struct.StringArray.html'>StringArray</a><a class='struct ' href='struct.StringArrayBytes.html'>StringArrayBytes</a><a class='struct ' href='struct.StringArrayItems.html'>StringArrayItems</a><a class='struct ' href='struct.Submodule.html'>Submodule</a><a class='struct ' href='struct.Tag.html'>Tag</a><a class='struct ' href='struct.Tree.html'>Tree</a><a class='struct ' href='struct.TreeEntry.html'>TreeEntry</a></div><div class='block enum'><h2>Enums</h2><a class='enum ' href='enum.BranchType.html'>BranchType</a><a class='enum ' href='enum.ConfigLevel.html'>ConfigLevel</a><a class='enum ' href='enum.Direction.html'>Direction</a><a class='enum ' href='enum.ErrorCode.html'>ErrorCode</a><a class='enum ' href='enum.ObjectType.html'>ObjectType</a><a class='enum ' href='enum.RepositoryState.html'>RepositoryState</a><a class='enum ' href='enum.ResetType.html'>ResetType</a></div>
+    </section>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press 'S' to search, '?' for more options..."
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>git2</a>::<wbr><a class='struct' href=''>Reference</a><wbr></span><span class='out-of-band'><span id='render-detail'>
+            <a id="collapse-all" href="#">[-]
+            </a>&nbsp;<a id="expand-all" href="#">[+]</a>
+        </span><a id='src-16691' href='../src/git2/home/travis/build/alexcrichton/git2-rs/src/reference.rs.html#10-15'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Reference&lt;'a&gt; {
+    // some fields omitted
+}</pre><div class='docblock'><p>A structure to represent a git <a href="http://git-scm.com/book/en/Git-Internals-Git-References">reference</a>.</p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><a class='stability Unmarked' title='No stability level'></a><code>impl&lt;'a&gt; <a class='struct' href='../git2/struct.Reference.html' title='git2::Reference'>Reference</a>&lt;'a&gt;</code></h3><div class='impl-methods'><h4 id='method.from_raw' class='method'><a class='stability Unmarked' title='No stability level'></a><code>unsafe fn <a href='#method.from_raw' class='fnname'>from_raw</a>(_repo: &amp;<a class='struct' href='../git2/struct.Repository.html' title='git2::Repository'>Repository</a>, raw: *mut <a class='enum' href='../libgit2-sys/enum.git_reference.html' title='libgit2-sys::git_reference'>git_reference</a>) -&gt; <a class='struct' href='../git2/struct.Reference.html' title='git2::Reference'>Reference</a></code></h4>
+<div class='docblock'><p>Creates a new reference from a raw pointer.</p>
+
+<p>This methods is unsafe as there is no guarantee that <code>raw</code> is a valid
+pointer.</p>
+</div><h4 id='method.from_raw_ptr' class='method'><a class='stability Unmarked' title='No stability level'></a><code>unsafe fn <a href='#method.from_raw_ptr' class='fnname'>from_raw_ptr</a>&lt;'a&gt;(raw: *mut <a class='enum' href='../libgit2-sys/enum.git_reference.html' title='libgit2-sys::git_reference'>git_reference</a>) -&gt; <a class='struct' href='../git2/struct.Reference.html' title='git2::Reference'>Reference</a>&lt;'a&gt;</code></h4>
+<div class='docblock'><p>Even more unsafe than <code>from_raw</code>, the output lifetime is not attached to
+any input.</p>
+</div><h4 id='method.is_valid_name' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.is_valid_name' class='fnname'>is_valid_name</a>(refname: &amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>Ensure the reference name is well-formed.</p>
+</div><h4 id='method.raw' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.raw' class='fnname'>raw</a>(&amp;self) -&gt; *mut <a class='enum' href='../libgit2-sys/enum.git_reference.html' title='libgit2-sys::git_reference'>git_reference</a></code></h4>
+<div class='docblock'><p>Get access to the underlying raw pointer.</p>
+</div><h4 id='method.delete' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.delete' class='fnname'>delete</a>(&amp;mut self) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a href='http://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='struct' href='../git2/struct.Error.html' title='git2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Delete an existing reference.</p>
+
+<p>This method works for both direct and symbolic references. The reference
+will be immediately removed on disk.</p>
+
+<p>This function will return an error if the reference has changed from the
+time it was looked up.</p>
+</div><h4 id='method.is_branch' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.is_branch' class='fnname'>is_branch</a>(&amp;self) -&gt; <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>Check if a reference is a local branch.</p>
+</div><h4 id='method.is_note' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.is_note' class='fnname'>is_note</a>(&amp;self) -&gt; <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>Check if a reference is a note.</p>
+</div><h4 id='method.is_remote' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.is_remote' class='fnname'>is_remote</a>(&amp;self) -&gt; <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>Check if a reference is a remote tracking branch</p>
+</div><h4 id='method.is_tag' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.is_tag' class='fnname'>is_tag</a>(&amp;self) -&gt; <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>Check if a reference is a tag</p>
+</div><h4 id='method.name' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.name' class='fnname'>name</a>(&amp;self) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;&amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>&gt;</code></h4>
+<div class='docblock'><p>Get the full name of a reference.</p>
+
+<p>Returns <code>None</code> if the name is not valid utf-8.</p>
+</div><h4 id='method.name_bytes' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.name_bytes' class='fnname'>name_bytes</a>(&amp;self) -&gt; <a href='http://doc.rust-lang.org/nightly/std/primitive.slice.html'>&amp;[</a><a href='http://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a><a href='http://doc.rust-lang.org/nightly/std/primitive.slice.html'>]</a></code></h4>
+<div class='docblock'><p>Get the full name of a reference.</p>
+</div><h4 id='method.shorthand' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.shorthand' class='fnname'>shorthand</a>(&amp;self) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;&amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>&gt;</code></h4>
+<div class='docblock'><p>Get the full shorthand of a reference.</p>
+
+<p>This will transform the reference name into a name &quot;human-readable&quot;
+version. If no shortname is appropriate, it will return the full name.</p>
+
+<p>Returns <code>None</code> if the shorthand is not valid utf-8.</p>
+</div><h4 id='method.shorthand_bytes' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.shorthand_bytes' class='fnname'>shorthand_bytes</a>(&amp;self) -&gt; <a href='http://doc.rust-lang.org/nightly/std/primitive.slice.html'>&amp;[</a><a href='http://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a><a href='http://doc.rust-lang.org/nightly/std/primitive.slice.html'>]</a></code></h4>
+<div class='docblock'><p>Get the full shorthand of a reference.</p>
+</div><h4 id='method.target' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.target' class='fnname'>target</a>(&amp;self) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../git2/struct.Oid.html' title='git2::Oid'>Oid</a>&gt;</code></h4>
+<div class='docblock'><p>Get the OID pointed to by a direct reference.</p>
+
+<p>Only available if the reference is direct (i.e. an object id reference,
+not a symbolic one).</p>
+</div><h4 id='method.target_peel' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.target_peel' class='fnname'>target_peel</a>(&amp;self) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../git2/struct.Oid.html' title='git2::Oid'>Oid</a>&gt;</code></h4>
+<div class='docblock'><p>Return the peeled OID target of this reference.</p>
+
+<p>This peeled OID only applies to direct references that point to a hard
+Tag object: it is the result of peeling such Tag.</p>
+</div><h4 id='method.symbolic_target' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.symbolic_target' class='fnname'>symbolic_target</a>(&amp;self) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;&amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>&gt;</code></h4>
+<div class='docblock'><p>Get full name to the reference pointed to by a symbolic reference.</p>
+
+<p>May return <code>None</code> if the reference is either not symbolic or not a
+valid utf-8 string.</p>
+</div><h4 id='method.symbolic_target_bytes' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.symbolic_target_bytes' class='fnname'>symbolic_target_bytes</a>(&amp;self) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a href='http://doc.rust-lang.org/nightly/std/primitive.slice.html'>&amp;[</a><a href='http://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a><a href='http://doc.rust-lang.org/nightly/std/primitive.slice.html'>]</a>&gt;</code></h4>
+<div class='docblock'><p>Get full name to the reference pointed to by a symbolic reference.</p>
+
+<p>Only available if the reference is symbolic.</p>
+</div><h4 id='method.resolve' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.resolve' class='fnname'>resolve</a>(&amp;self) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../git2/struct.Reference.html' title='git2::Reference'>Reference</a>&lt;'a&gt;, <a class='struct' href='../git2/struct.Error.html' title='git2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Resolve a symbolic reference to a direct reference.</p>
+
+<p>This method iteratively peels a symbolic reference until it resolves to
+a direct reference to an OID.</p>
+
+<p>If a direct reference is passed as an argument, a copy of that
+reference is returned.</p>
+</div><h4 id='method.rename' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.rename' class='fnname'>rename</a>(&amp;mut self, new_name: &amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>, force: <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>, sig: <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;&amp;<a class='struct' href='../git2/struct.Signature.html' title='git2::Signature'>Signature</a>&gt;, msg: &amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../git2/struct.Reference.html' title='git2::Reference'>Reference</a>&lt;'a&gt;, <a class='struct' href='../git2/struct.Error.html' title='git2::Error'>Error</a>&gt;</code></h4>
+<div class='docblock'><p>Rename an existing reference.</p>
+
+<p>This method works for both direct and symbolic references.</p>
+
+<p>If the force flag is not enabled, and there&#39;s already a reference with
+the given name, the renaming will fail.</p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><a class='stability Unmarked' title='No stability level'></a><code>impl&lt;'a&gt; <a class='trait' href='http://doc.rust-lang.org/nightly/core/cmp/trait.PartialOrd.html' title='core::cmp::PartialOrd'>PartialOrd</a> for <a class='struct' href='../git2/struct.Reference.html' title='git2::Reference'>Reference</a>&lt;'a&gt;</code></h3><div class='impl-methods'><h4 id='method.partial_cmp' class='method'><a class='stability Unstable' title='Unstable: Definition may change slightly after trait reform'></a><code>fn <a href='#method.partial_cmp' class='fnname'>partial_cmp</a>(&amp;self, other: &amp;<a class='struct' href='../git2/struct.Reference.html' title='git2::Reference'>Reference</a>&lt;'a&gt;) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='enum' href='http://doc.rust-lang.org/nightly/core/cmp/enum.Ordering.html' title='core::cmp::Ordering'>Ordering</a>&gt;</code></h4>
+<h4 id='method.lt' class='method'><a class='stability Unstable' title='Unstable: Definition may change slightly after trait reform'></a><code>fn <a href='#tymethod.lt' class='fnname'>lt</a>(&amp;self, other: &amp;Self) -&gt; <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<h4 id='method.le' class='method'><a class='stability Unstable' title='Unstable: Definition may change slightly after trait reform'></a><code>fn <a href='#tymethod.le' class='fnname'>le</a>(&amp;self, other: &amp;Self) -&gt; <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<h4 id='method.gt' class='method'><a class='stability Unstable' title='Unstable: Definition may change slightly after trait reform'></a><code>fn <a href='#tymethod.gt' class='fnname'>gt</a>(&amp;self, other: &amp;Self) -&gt; <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<h4 id='method.ge' class='method'><a class='stability Unstable' title='Unstable: Definition may change slightly after trait reform'></a><code>fn <a href='#tymethod.ge' class='fnname'>ge</a>(&amp;self, other: &amp;Self) -&gt; <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><a class='stability Unmarked' title='No stability level'></a><code>impl&lt;'a&gt; <a class='trait' href='http://doc.rust-lang.org/nightly/core/cmp/trait.Ord.html' title='core::cmp::Ord'>Ord</a> for <a class='struct' href='../git2/struct.Reference.html' title='git2::Reference'>Reference</a>&lt;'a&gt;</code></h3><div class='impl-methods'><h4 id='method.cmp' class='method'><a class='stability Unstable' title='Unstable: Definition may change slightly after trait reform'></a><code>fn <a href='#method.cmp' class='fnname'>cmp</a>(&amp;self, other: &amp;<a class='struct' href='../git2/struct.Reference.html' title='git2::Reference'>Reference</a>&lt;'a&gt;) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/cmp/enum.Ordering.html' title='core::cmp::Ordering'>Ordering</a></code></h4>
+</div><h3 class='impl'><a class='stability Unmarked' title='No stability level'></a><code>impl&lt;'a&gt; <a class='trait' href='http://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html' title='core::cmp::PartialEq'>PartialEq</a> for <a class='struct' href='../git2/struct.Reference.html' title='git2::Reference'>Reference</a>&lt;'a&gt;</code></h3><div class='impl-methods'><h4 id='method.eq' class='method'><a class='stability Unstable' title='Unstable: Definition may change slightly after trait reform'></a><code>fn <a href='#method.eq' class='fnname'>eq</a>(&amp;self, other: &amp;<a class='struct' href='../git2/struct.Reference.html' title='git2::Reference'>Reference</a>&lt;'a&gt;) -&gt; <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<h4 id='method.ne' class='method'><a class='stability Unstable' title='Unstable: Definition may change slightly after trait reform'></a><code>fn <a href='#tymethod.ne' class='fnname'>ne</a>(&amp;self, other: &amp;Self) -&gt; <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><a class='stability Unmarked' title='No stability level'></a><code>impl&lt;'a&gt; <a class='trait' href='http://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html' title='core::cmp::Eq'>Eq</a> for <a class='struct' href='../git2/struct.Reference.html' title='git2::Reference'>Reference</a>&lt;'a&gt;</code></h3><div class='impl-methods'><h4 id='method.assert_receiver_is_total_eq' class='method'><a class='stability Unstable' title='Unstable: Definition may change slightly after trait reform'></a><code>fn <a href='#tymethod.assert_receiver_is_total_eq' class='fnname'>assert_receiver_is_total_eq</a>(&amp;self)</code></h4>
+</div><h3 class='impl'><a class='stability Unmarked' title='No stability level'></a><code>impl&lt;'a&gt; <a class='trait' href='http://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../git2/struct.Reference.html' title='git2::Reference'>Reference</a>&lt;'a&gt;</code></h3><div class='impl-methods'><h4 id='method.drop' class='method'><a class='stability Experimental' title='Experimental'></a><code>fn <a href='#method.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <div id="help" class="hidden">
+        <div class="shortcuts">
+            <h1>Keyboard shortcuts</h1>
+            <dl>
+                <dt>?</dt>
+                <dd>Show this help dialog</dd>
+                <dt>S</dt>
+                <dd>Focus the search field</dd>
+                <dt>&larrb;</dt>
+                <dd>Move up in search results</dd>
+                <dt>&rarrb;</dt>
+                <dd>Move down in search results</dd>
+                <dt>&#9166;</dt>
+                <dd>Go to active search result</dd>
+            </dl>
+        </div>
+        <div class="infos">
+            <h1>Search tricks</h1>
+            <p>
+                Prefix searches with a type followed by a colon (e.g.
+                <code>fn:</code>) to restrict the search to a given type.
+            </p>
+            <p>
+                Accepted types are: <code>fn</code>, <code>mod</code>,
+                <code>struct</code>, <code>enum</code>,
+                <code>trait</code>, <code>typedef</code> (or
+                <code>tdef</code>).
+            </p>
+        </div>
+    </div>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "git2";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    
+    <script async src="../search-index.js"></script>
+</body>
+</html>
